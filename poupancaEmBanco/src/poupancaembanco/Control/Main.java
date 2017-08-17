@@ -7,8 +7,9 @@ package poupancaembanco.Control;
 
 import poupancaembanco.Model.PoupancaEmBanco;
 import Persistencia.poupancaDAO;
-import static View.view.*;
+import static View.View.*;
 import java.util.Scanner;
+import poupancaembanco.Model.Log;
 
 public class Main {
     
@@ -16,7 +17,7 @@ public class Main {
 
 	static public PoupancaEmBanco poupanca = new PoupancaEmBanco(0.05 , 1234 , 0001 , 100.00 , "Juca Robson", 1.02, "Itau");
         //static public PoupancaEmBanco poupanca = new PoupancaEmBanco();
-
+        static public Log loglog = new Log();
 	static public poupancaDAO daodao = new poupancaDAO();
         //static public PoupancaEmBanco poupanca2 = new PoupancaEmBanco(0.0 , 0000 , 0000 , 000.00 , "EM BRANCO", 0.00, "NENHUM");
         
@@ -37,7 +38,9 @@ public class Main {
                 case 1:
                     poupanca = poupancaDAO.restaurarPoupanca();
                     poupanca.exibeTudo();
+                    loglog = poupancaDAO.restaurarLog();
                     poupancaCarregada();
+                    logCarregado();
                     
                     
                 break;
@@ -49,7 +52,9 @@ public class Main {
                 
                 case 3:
                     daodao.salvarPoupanca(poupanca);
+                    daodao.salvarLog(loglog);
                     poupancaSalva();
+                    logSalvo();
                 break;
                 
                 case 4:

@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 
 import java.io.ObjectOutputStream;
+import poupancaembanco.Model.Log;
 import poupancaembanco.Model.PoupancaEmBanco;
 
 public class poupancaDAO {
@@ -38,16 +39,71 @@ public class poupancaDAO {
 
     }
     
-    /*
-    public static void salvarLog()
+    
+    public static void salvarLog(Log log)
     {
+        
+ 
+           try {
+
+             FileOutputStream saveFile = new FileOutputStream("loglog.sav");
+
+             ObjectOutputStream stream = new ObjectOutputStream(saveFile);
+
+ 
+
+              // salva o objeto
+
+             stream.writeObject(log);
+
+ 
+
+             stream.close();
+
+           } catch (Exception exc) {
+
+             exc.printStackTrace();
+
+           }
     }
     
-    public static log restaurarLog()
+    public static Log restaurarLog()
     {
+       
+
+           Log log = null;
+
+
+
+           try {
+
+                  FileInputStream restFile = new FileInputStream("loglog.sav");
+
+                  ObjectInputStream stream = new ObjectInputStream(restFile);
+
+
+
+                  // recupera o objeto
+
+                  log = (Log) stream.readObject();
+
+
+
+                  stream.close();
+
+           } catch (Exception e) {
+
+                  e.printStackTrace();
+
+           }
+
+
+
+           return log;
+
     }
-    */
     
+   
  
 
     public static PoupancaEmBanco restaurarPoupanca() {

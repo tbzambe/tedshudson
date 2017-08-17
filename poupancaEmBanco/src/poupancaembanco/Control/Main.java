@@ -35,7 +35,7 @@ public class Main {
                 }
                 switch (opcao) {
                 case 1:
-                    poupanca = poupancaDAO.restaurar();
+                    poupanca = poupancaDAO.restaurarPoupanca();
                     poupanca.exibeTudo();
                     poupancaCarregada();
                     
@@ -48,7 +48,7 @@ public class Main {
                 break;
                 
                 case 3:
-                    daodao.salvar(poupanca);
+                    daodao.salvarPoupanca(poupanca);
                     poupancaSalva();
                 break;
                 

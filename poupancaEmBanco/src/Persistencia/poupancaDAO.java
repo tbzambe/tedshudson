@@ -11,7 +11,7 @@ import poupancaembanco.Model.PoupancaEmBanco;
 public class poupancaDAO {
      
 
-    public static void salvar(PoupancaEmBanco objeto) {
+    public static void salvarPoupanca(PoupancaEmBanco objeto) {
 
  
            try {
@@ -37,13 +37,20 @@ public class poupancaDAO {
            }
 
     }
-
-
-
-
+    
+    /*
+    public static void salvarLog()
+    {
+    }
+    
+    public static log restaurarLog()
+    {
+    }
+    */
+    
  
 
-    public static PoupancaEmBanco restaurar() {
+    public static PoupancaEmBanco restaurarPoupanca() {
 
 
 

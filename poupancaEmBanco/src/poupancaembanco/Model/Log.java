@@ -18,4 +18,14 @@ public class Log {
     public static void addTransacao(Transacao transacao){
         arrayList.add(transacao);
     }
+
+    public static ArrayList<Transacao> getArrayList() {
+        return arrayList;
+    }
+
+    public static void setArrayList(ArrayList<Transacao> arrayList) {
+        Log.arrayList = arrayList;
+    }
+    
+    
 }

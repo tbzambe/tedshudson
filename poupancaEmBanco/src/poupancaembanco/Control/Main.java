@@ -8,8 +8,11 @@ package poupancaembanco.Control;
 import poupancaembanco.Model.PoupancaEmBanco;
 import Persistencia.poupancaDAO;
 import static View.View.*;
+import java.util.Calendar;
 import java.util.Scanner;
+import java.util.TimeZone;
 import poupancaembanco.Model.Log;
+import poupancaembanco.Model.Transacao;
 
 public class Main {
     
@@ -19,6 +22,12 @@ public class Main {
         //static public PoupancaEmBanco poupanca = new PoupancaEmBanco();
         static public Log loglog = new Log();
 	static public poupancaDAO daodao = new poupancaDAO();
+        static public Transacao deal = new Transacao();
+
+    /**
+     *
+     */
+        public static Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("Brazil/East"));
         //static public PoupancaEmBanco poupanca2 = new PoupancaEmBanco(0.0 , 0000 , 0000 , 000.00 , "EM BRANCO", 0.00, "NENHUM");
         
 	public static void main(String[] args) {
@@ -61,7 +70,11 @@ public class Main {
                     valorDeposito();
                     valor = scan.nextDouble();
                     poupanca.operacao('1', valor);
-                    opcao = 2;
+                    //int dia, int mes, int ano, int hora, int minuto, int segundo, String operacao, Double saldoAtual
+                    deal = new Transacao(calendar.get(Calendar.DAY_OF_MONTH),calendar.get(Calendar.MONTH),calendar.get(Calendar.YEAR),calendar.get(Calendar.HOUR_OF_DAY),calendar.get(Calendar.MINUTE),calendar.get(Calendar.SECOND),"Deposito",poupanca.getSaldo());
+                    loglog.addTransacao(deal);
+                    
+                    opcao = 2;                                       
                 break;
                     
                 case 5:

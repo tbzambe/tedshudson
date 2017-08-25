@@ -89,7 +89,10 @@ public class PoupancaEmBanco  implements Serializable {
 		return saldo;
 	}
 	public void setSaldo(double saldo) {
-		this.saldo = saldo;
+		saldo *= 100;
+                saldo = Math.round(saldo);
+                saldo /= 100;
+                this.saldo = saldo;
 	}
 	public String getNomeCliente() {
 		return nomeCliente;

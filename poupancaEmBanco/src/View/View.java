@@ -13,11 +13,11 @@ public class View {
     
     public static void printMenu()
     {
-        System.out.println("Menu \n");
-        System.out.println("1 - CARREGAR POUPANÇA \n");
-        System.out.println("2 - Operações\n");
-        System.out.println("3 - SALVAR POUPANÇA \n");
-        System.out.println("9 - Sair \n");
+        System.out.println("\n Menu");
+        System.out.println("1 - CARREGAR POUPANÇA");
+        System.out.println("2 - Operações");
+        System.out.println("3 - SALVAR POUPANÇA");
+        System.out.println("9 - Sair");
     }
     
     public static void printMenuOperacoes()
@@ -27,7 +27,8 @@ public class View {
         System.out.println("5 - Saque");
         System.out.println("6 - Aplicar Juros");
         System.out.println("7 - Exibir status da conta");
-        System.out.println("8 - Voltar");
+        System.out.println("8 - Exibe lavagem de dinheiro");
+        System.out.println("9 - Voltar");
         
         
     }

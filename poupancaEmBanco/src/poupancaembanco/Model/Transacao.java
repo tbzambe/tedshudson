@@ -5,6 +5,7 @@
  */
 package poupancaembanco.Model;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 
@@ -12,7 +13,7 @@ import java.util.Calendar;
  *
  * @author alunodev05
  */
-public class Transacao {
+public class Transacao implements Serializable {
     private int dia;
     private int mes;
     private int ano;
@@ -21,8 +22,11 @@ public class Transacao {
     private int segundo;
     private String operacao;
     private Double saldoAtual;
+    private Double valor;
+    
+    private static final long serialVersionUID = 5110537511946052395L;
 
-    public Transacao(int dia, int mes, int ano, int hora, int minuto, int segundo, String operacao, Double saldoAtual) {
+    public Transacao(int dia, int mes, int ano, int hora, int minuto, int segundo, String operacao, Double valor, Double saldoAtual) {
         this.dia = dia;
         this.mes = mes;
         this.ano = ano;
@@ -30,7 +34,16 @@ public class Transacao {
         this.minuto = minuto;
         this.segundo = segundo;
         this.operacao = operacao;
+        this.valor = valor;
         this.saldoAtual = saldoAtual;
+    }
+
+    public Double getValor() {
+        return valor;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
     }
 
     

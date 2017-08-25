@@ -6,7 +6,9 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import poupancaembanco.Model.Log;
+import poupancaembanco.Model.Transacao;
 import poupancaembanco.Model.PoupancaEmBanco;
 
 public class poupancaDAO {
@@ -54,7 +56,7 @@ public class poupancaDAO {
 
               // salva o objeto
 
-             stream.writeObject(log);
+             stream.writeObject(log.arrayList);
 
  
 
@@ -67,11 +69,11 @@ public class poupancaDAO {
            }
     }
     
-    public static Log restaurarLog()
+    public static ArrayList<Transacao> restaurarLog()
     {
        
 
-           Log log = null;
+           ArrayList<Transacao> log = null;
 
 
 
@@ -85,7 +87,7 @@ public class poupancaDAO {
 
                   // recupera o objeto
 
-                  log = (Log) stream.readObject();
+                  log = (ArrayList<Transacao>) stream.readObject();
 
 
 
